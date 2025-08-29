@@ -31,5 +31,6 @@ winit = "0.28.6"
 image = "0.24.6"
 serde_yaml = "0.9.21"
 kira = "0.8.3"
+tts = "0.26.3"
 
 [features]

@@ -31,7 +31,7 @@ mod recorder;
 mod stt;
 
 // include text-to-speech
-// empty
+mod tts;
 
 // include commands
 mod commands;
@@ -88,7 +88,10 @@ fn main() -> Result<(), String> {
     }
 
     // init tts engine
-    // none for now (Silero-rs coming)
+    if tts::init().is_err() {
+        // we can continue without tts
+        warn!("TTS engine is not available.");
+    }
 
     // init commands
     info!("Initializing commands.");

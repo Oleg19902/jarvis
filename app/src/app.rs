@@ -1,6 +1,6 @@
 use std::time::SystemTime;
 
-use crate::{config, audio, recorder, listener, stt, commands, COMMANDS_LIST};
+use crate::{config, audio, recorder, listener, stt, commands, tts, COMMANDS_LIST};
 use rand::seq::SliceRandom;
 
 pub fn start() -> Result<(), ()> {
@@ -41,7 +41,10 @@ fn main_loop() -> Result<(), ()> {
 
                 // play some greet phrase
                 // @TODO. Make it via commands or upcoming events system.
-                audio::play_sound(&sounds_directory.join(format!("{}.wav", config::ASSISTANT_GREET_PHRASES.choose(&mut rand::thread_rng()).unwrap())));
+                let greetings = ["Да, сэр?", "Слушаю, сэр.", "К вашим услугам, сэр."];
+                if let Some(greeting) = greetings.choose(&mut rand::thread_rng()) {
+                    crate::tts::speak(greeting);
+                }
 
                 // wait for voice commands
                 'voice_recognition: loop {

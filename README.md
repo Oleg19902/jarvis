@@ -41,6 +41,32 @@ This are the neural networks we are currently using:
 Currently, only Russian language is supported.<br>
 But soon, Ukranian and English will be added for the interface, wake-word detection and speech recognition.
 
+## Installation
+
+### Linux
+1. Install system dependencies:
+   - Rust toolchain with `rustup` (nightly is not required).
+   - Node.js 18+ and `pnpm` or `npm`.
+   - ALSA development libraries and a C toolchain (`build-essential` on Debian/Ubuntu) for the audio backends.
+   - Optional: platform libraries for [PvRecorder](https://github.com/Picovoice/pvrecorder) and [Vosk](https://github.com/alphacep/vosk-api).
+2. Install JavaScript dependencies from the repo root:
+   - `cd gui && pnpm install` (or `npm install`), then return to the root.
+3. Build and run:
+   - Development: `cargo tauri dev`
+   - Release bundle: `cargo tauri build`
+
+### Windows
+1. Install tooling:
+   - [Rust](https://www.rust-lang.org/tools/install) with the MSVC toolchain.
+   - [Node.js 18+](https://nodejs.org/) and `pnpm` or `npm`.
+   - [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) with C++ workload for native crates.
+   - Optional: platform-specific assets for [PvRecorder](https://github.com/Picovoice/pvrecorder) and [Vosk](https://github.com/alphacep/vosk-api).
+2. Install frontend dependencies:
+   - `cd gui && pnpm install` (or `npm install`), then go back to the repo root.
+3. Build and run:
+   - Development: `cargo tauri dev`
+   - Release bundle: `cargo tauri build`
+
 ## How to build?
 
 Nothing special was used to build this project.<br>
@@ -49,7 +75,7 @@ Other than that, all you need is to install all the dependencies and then compil
 Or run dev with `cargo tauri dev`.
 
 <br><br>
-*Thought you might need some of the platform specific libraries for [PvRecorder](https://github.com/Picovoice/pvrecorder) and [Vosk](https://github.com/alphacep/vosk-api).*
+*Thought you might need some of the platform specific libraries for [PvRecorder](https://github.com/Picovoice/pvrecorder) and [Vosk](https://github.com/alphacep/vosk-api).* 
 
 ## Author
 

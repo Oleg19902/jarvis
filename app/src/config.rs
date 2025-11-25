@@ -75,7 +75,7 @@ pub const FEEDBACK_LINK: Option<&str> = Some("https://t.me/jarvis_feedback_bot")
     Tray.
  */
 pub const TRAY_ICON: &str = "32x32.png";
-pub const TRAY_TOOLTIP: &str = "Jarvis Voice Assistant";
+pub const TRAY_TOOLTIP: &str = "Голосовой ассистент Jarvis";
 
 // RUSPOTTER
 pub const RUSPOTTER_MIN_SCORE: f32 = 0.62;
